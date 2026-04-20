@@ -1,0 +1,5 @@
+a = int(input("Enter no.1 of your choice"))
+b = int(input("Enter 2nd number of your choice"))
+print("The addition of these two numbers", a+b)
+print("The substraction between these two numbers", a-b)
+print("The multiplication of these two numbers", a*b)
