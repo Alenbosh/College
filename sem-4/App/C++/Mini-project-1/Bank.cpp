@@ -28,6 +28,7 @@ ostream &operator<<(ostream &out, const Account &acc) {
   out << "Account Holder's Name : " << acc.holderName << "\n";
   out << "Account Number : " << acc.accountNumber << "\n";
   out << "Account's Balance : " << acc.balance << "\n";
+  out << "--------------------------------------------------\n";
   return out;
 }
 
@@ -82,10 +83,11 @@ int main() {
   int choice;
   int AccountNo = 0;
   int p = 0;
-  cout << "Enter Your choice:( 1.Create SavingsAccount 2.Create CurrentAccount "
-          "3.Deposit 4.Withdraw 5.Display AllAccounts 6.AddInterest 7.Exit) "
-       << endl;
   while (true) {
+    cout << "Enter Your choice:( 1.Create SavingsAccount 2.Create "
+            "CurrentAccount "
+            "3.Deposit 4.Withdraw 5.Display AllAccounts 6.AddInterest 7.Exit) "
+         << endl;
     if (!(cin >> choice)) {
       cout << "Invalid input. Enter a number.\n";
       cin.clear();
@@ -103,7 +105,8 @@ int main() {
           int year, interest;
           string accStr = to_string(AccountNo);
           cout << "Enter Account Holder's Name :" << endl;
-          cin >> name;
+          cin.ignore();
+          getline(cin, name);
           cout << "Enter inital balance for new account :" << endl;
           cin >> balance;
           cout << "Enter years for which amount to be stored:" << endl;
@@ -126,7 +129,8 @@ int main() {
           double balancee = 0;
           string accStrr = to_string(AccountNo);
           cout << "Enter Account Holder's Name :" << endl;
-          cin >> namee;
+          cin.ignore();
+          getline(cin, namee);
           cout << "Enter inital balance for new account :" << endl;
           cin >> balancee;
           accounts[p] = new CurrentAccount(accStrr, namee, balancee, 4500.00);
