@@ -1,5 +1,5 @@
+#include <cstring>
 #include <iostream>
-#include <type_traits>
 using namespace std;
 
 class Concatenate {
@@ -10,5 +10,19 @@ public:
     this->str1 = str1;
     this->str2 = str2;
   }
-  void Merge()
+  char *Merge() {
+    int len = strlen(str1) + strlen(str2) + 1;
+    char *result = new char[len];
+    strcpy(result, str2);
+    strcat(result, str1);
+    return result;
+  }
 };
+
+int main() {
+  char a[] = "Hello ";
+  char b[] = "world!";
+
+  Concatenate obj(a, b);
+  cout << obj.Merge();
+}
