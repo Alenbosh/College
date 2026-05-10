@@ -61,18 +61,6 @@ public class MergeSortExperiment {
         }
     }
 
-    // Generate random array
-    public static int[] generateRandomArray(int n) {
-        Random rand = new Random();
-        int[] arr = new int[n];
-
-        for (int i = 0; i < n; i++) {
-            arr[i] = rand.nextInt(100000);
-        }
-
-        return arr;
-    }
-
     public static void main(String[] args) {
 
         int[] sizes = { 5000, 10000, 20000, 40000, 80000 };
@@ -90,5 +78,17 @@ public class MergeSortExperiment {
 
             System.out.println("n = " + n + " -> Time = " + timeTaken + " ms");
         }
+    }
+
+    // Generate random array
+    public static int[] generateRandomArray(int n) {
+        Random rand = new Random();
+        int[] arr = new int[n];
+
+        for (int i = 0; i < n; i++) {
+            arr[i] = rand.nextInt(100000);
+        }
+
+        return arr;
     }
 }
