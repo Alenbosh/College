@@ -10,7 +10,7 @@ int main() {
   int p[n];
 
   // Input Arrival Time
-  printf("Enter Arrival Time:\n");
+  printf("Enter Arrival Time:");
   for (i = 0; i < n; i++) {
     scanf("%d", &at[i]);
     p[i] = i + 1;

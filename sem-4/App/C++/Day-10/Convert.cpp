@@ -1,10 +1,36 @@
+#include <cctype>
+#include <cstring>
 #include <iostream>
 using namespace std;
 
-void Conversion(char *a, char (*func)(char *)) {
-  cout << "Result = " << func(char *a) << endl;
+void toUpper(char *str) {
+  while (*str) {
+    *str = toupper(*str);
+    str++;
+  }
 }
 
-char upperCase(char)
+void toLower(char *str) {
+  while (*str) {
+    *str = tolower(*str);
+    str++;
+  }
+}
 
-    int main() {}
+int main() {
+  char str[100];
+  cout << "Enter a string : ";
+  cin.getline(str, 100);
+
+  void (*func)(char *);
+
+  func = toUpper;
+  func(str);
+  cout << "Uppercase: " << str << endl;
+
+  func = toLower;
+  func(str);
+  cout << "Lowercase: " << str << endl;
+
+  return 0;
+}
